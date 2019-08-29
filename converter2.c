@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main(int argc, char *argv[])
+int main(int counter, char *words[])
 {
-	  for (int i = 1; argv[i]!=NULL; ++i){ 
-		for (int j=0; argv[i][j]!=0; ++j) {      	
-			if(isupper(argv[i][j])){
-				argv[i][j]= tolower(argv[i][j]);
+	  for (int i = 1; words[i]!=NULL; ++i){ 
+		for (int j=0; words[i][j]!=0; ++j) {      	
+			if(isupper(words[i][j])){
+				words[i][j]= tolower(words[i][j]);
 				printf("_");
 			}
 			
-			printf("%c", argv[i][j]);
+			printf("%c", words[i][j]);
 	       	}
 		printf("\n");
        	}
