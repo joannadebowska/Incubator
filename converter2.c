@@ -1,20 +1,20 @@
 #include <stdio.h>
-
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
-	for (char **arg = argv; *arg; ++arg) { 
-		for (char *p = *arg; *p; ++p) {      	
-			if (*p>='A' && *p<='Z'){
-				*p=*p+32;
+	  for (int i = 1; argv[i]!=NULL; ++i){ 
+		for (int j=0; argv[i][j]!=0; ++j) {      	
+			if(isupper(argv[i][j])){
+				argv[i][j]= tolower(argv[i][j]);
 				printf("_");
-				printf("%c", *p);
 			}
-			else
-				printf("%c", *p);
-		
-						        }
-			printf("\n");
-				        }
-	        return 0;
+			
+			printf("%c", argv[i][j]);
+	       	}
+		printf("\n");
+       	}
+
+
+return 0;
 }
